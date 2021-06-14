@@ -16,6 +16,30 @@ public class DaftarMenu {
         daftarMenu = new ArrayList<>();
     }
     
+    public Menu pilihMenu() {
+        try{
+            Scanner input = new Scanner(System.in);
+            
+            System.out.print("Nomor Menu yang dipesan : ");
+            int no_menu = input.nextInt();
+            
+            Menu m = daftarMenu.get(no_menu-1);
+            
+            if(!m.getKategori().equalsIgnoreCase("Kuah")){
+                return m;
+            }else{
+                System.out.println("(Err) Pesab dulu Menu Ramen");
+                return pilhMenu();
+            }
+        }catch(IndexOutOFBoundsException err) {
+            System.out.println("(Err) Pesanan Tidak Tersedia");
+            return pilihMenu();
+        }catch(InputMismatchExpection err) {
+            System.out.println("(Err) Mohon Masukan nomor menu");
+            return pilihMenu();
+        }
+    }
+    
     public void tambahMenu(Menu menu) { 
         daftarMenu.add(menu);
     }
