@@ -9,14 +9,14 @@ package classes;
  *
  * @author Vito
  */
-public class Ramen extends Menu{
-    
-    public Ramen(String nama_ramen, double harga) {
-        
-        public Ramen(String nama_ramen, double harga) {
-            setNama_menu(nama_ramen);
-            setHarga(harga);
-            setKategori("Ramen");
-        }
+public class Ramen extends Menu {
+    public Ramen(String nama_ramen, double harga){
+    setNamaMenu(nama_ramen);
+    setHarga(harga);
+    setKategori("Ramen");
+    }
+
+    private void setNamaMenu(String nama_ramen) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

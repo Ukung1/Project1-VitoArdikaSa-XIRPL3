@@ -32,8 +32,8 @@ public class Menu {
     
     public String getKategori() { 
         return kategori;
-    
-    public void setKategori(String kategorikal) {
-        this.kategori = kategorikal;
+    }
+    public void setKategori(String kategori){
+        this.kategori = kategori;
     }
 }
