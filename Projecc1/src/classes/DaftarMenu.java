@@ -40,6 +40,29 @@ public class DaftarMenu {
         }
     }
     
+    public Menu pilihKuah() {
+        try{
+            Scanner input = new Scanner(System.in);
+            
+            System.out.print("Kuah [sesuai nomor menu] : ");
+            int no_menu = input.nextInt();
+            
+            Menu m  = daftarMenu.get(no_menu-1);
+            
+            if(m.getKategori().equalsIgnorecase("Kuah")){
+                return m;
+            }else{
+                System.out.println("[Err] Bukan Menu Kuah");
+                return pilihKuah();
+            }
+        }catch(IndexOutOfBoundsException err) {
+            System.out.println("[Err] Pesanan Tidak Tersedia");
+            return pilihKuah();
+        }catch(InputMismatchExeption err) {
+            System.out.println("[Err] Mohon masukan nomor kuah");
+            return pilihKuah();
+        }
+    }
     public void tambahMenu(Menu menu) { 
         daftarMenu.add(menu);
     }
